@@ -6,6 +6,9 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    String scouter;
+    String teamNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
