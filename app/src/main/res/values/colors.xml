@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bgpink">#E67373</color>
     //bgpink = bubble gum pink
+    <color name="melloyellow">#e6ad73</color>
 </resources>

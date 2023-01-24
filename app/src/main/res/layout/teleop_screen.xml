@@ -21,7 +21,7 @@
         android:id="@+id/ConeTopButton"
         android:layout_width="152dp"
         android:layout_height="77dp"
-        android:backgroundTint="#E67373"
+        android:backgroundTint="@color/bgpink"
         android:onClick="coneTopPlus"
         android:text="Top"
         android:textSize="22dp"
@@ -36,7 +36,7 @@
         android:id="@+id/cubeTopButton"
         android:layout_width="152dp"
         android:layout_height="77dp"
-        android:backgroundTint="#E67373"
+        android:backgroundTint="@color/bgpink"
         android:onClick="cubeTopPlus"
         android:text="Top"
         android:textSize="22dp"
@@ -51,7 +51,7 @@
         android:id="@+id/coneMidButton"
         android:layout_width="152dp"
         android:layout_height="77dp"
-        android:backgroundTint="#E67373"
+        android:backgroundTint="@color/bgpink"
         android:onClick="coneMidPlus"
         android:text="Middle"
         android:textSize="22dp"
@@ -66,7 +66,7 @@
         android:id="@+id/cubeMidButton"
         android:layout_width="152dp"
         android:layout_height="77dp"
-        android:backgroundTint="#E67373"
+        android:backgroundTint="@color/bgpink"
         android:onClick="cubeMidPlus"
         android:text="Middle"
         android:textSize="22dp"
@@ -81,7 +81,7 @@
         android:id="@+id/coneBottomButton"
         android:layout_width="152dp"
         android:layout_height="77dp"
-        android:backgroundTint="#E67373"
+        android:backgroundTint="@color/bgpink"
         android:onClick="coneLowPlus"
         android:text="Bottom"
         android:textSize="22dp"
@@ -130,4 +130,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.973"
         app:srcCompat="@drawable/triangle" />
+
+    <Button
+        android:id="@+id/parkButton"
+        android:layout_width="152dp"
+        android:layout_height="77dp"
+        android:backgroundTint="@color/melloyellow"
+        android:text="Parked"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <Button
+        android:id="@+id/dockedButton"
+        android:layout_width="152dp"
+        android:layout_height="77dp"
+        android:backgroundTint="@color/melloyellow"
+        android:text="Docked"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dockedandEbutton"
+        android:layout_width="152dp"
+        android:layout_height="77dp"
+        android:backgroundTint="@color/melloyellow"
+        android:text="Docked + Engaged"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.709" />
 </androidx.constraintlayout.widget.ConstraintLayout>
