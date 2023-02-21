@@ -10,4 +10,5 @@
     <color name="bgpink">#E67373</color>
     //bgpink = bubble gum pink
     <color name="melloyellow">#e6ad73</color>
+    <color name="undoColor">#FFCF9A9A</color>
 </resources>
