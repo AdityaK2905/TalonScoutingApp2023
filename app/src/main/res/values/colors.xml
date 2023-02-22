@@ -11,4 +11,7 @@
     //bgpink = bubble gum pink
     <color name="melloyellow">#e6ad73</color>
     <color name="undoColor">#FFCF9A9A</color>
+    <color name="redhex">#EC0B0B</color>
+    <color name="blackhex">#000000</color>
+    <color name="greyHex">#454545</color>
 </resources>

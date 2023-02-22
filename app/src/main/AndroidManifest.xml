@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ScoutingApp2023">
-        <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/AndroidManifest" />
+
 
         <activity
             android:name=".MainActivity"
@@ -21,6 +19,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".TeleOpActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".AutoActivity"
+            android:exported="true">
         </activity>
     </application>
 
