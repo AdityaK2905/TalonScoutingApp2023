@@ -48,7 +48,7 @@ public class EndGameActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.auto_screen);
+        setContentView(R.layout.end_game);
         Bundle bundleTele = getIntent().getExtras();
 
         autoTopCones = bundleTele.getInt("autoConeTop");
@@ -136,7 +136,8 @@ public class EndGameActivity extends AppCompatActivity {
 
         }
         catch (Exception e) {
-
+            Toast toast = Toast.makeText(getApplicationContext(), "Something went wrong.", Toast.LENGTH_LONG);
+            toast.show();
         }
         Toast toast = Toast.makeText(getApplicationContext(), "File Downloaded! Check Directory.", Toast.LENGTH_LONG);
         toast.show();
