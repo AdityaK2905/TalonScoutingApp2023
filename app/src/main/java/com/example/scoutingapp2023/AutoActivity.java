@@ -22,15 +22,15 @@ public class AutoActivity extends AppCompatActivity {
     int cubeBot = 0;
 
     String chargeStation = "None";
+    Boolean leftCommunity = false;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.auto_screen);
         Bundle bundleMain = getIntent().getExtras();
 
-        bundleMain.putString("matchNum", matchNum);
-        bundleMain.putString("teamNum", teamNum);
-        bundleMain.putString("chargeStation", chargeStation);
+       matchNum = bundleMain.getString("matchNum");
+       teamNum = bundleMain.getString("teamNum");
 
     }
 
@@ -49,13 +49,23 @@ public class AutoActivity extends AppCompatActivity {
         bundleStart.putInt("autoCubeMid", cubeMid);
         bundleStart.putInt("autoCubeBot", cubeBot);
 
+        bundleStart.putString("matchNum", matchNum);
+        bundleStart.putString("teamNum", teamNum);
+        bundleStart.putString("chargeStation", chargeStation);
+
+        bundleStart.putBoolean("leftCommunity", leftCommunity);
+
         Intent TeleIntent = new Intent(this, TeleOpActivity.class);
-        //AutoIntent.putExtras(bundleStart);
+        TeleIntent.putExtras(bundleStart);
         startActivity(TeleIntent);
     }
 
-    public void parked(View v){
-        chargeStation = "Parked";
+    public void leftCommunity(View v){
+        leftCommunity = true;
+    }
+
+    public void undoLeftCommunity(View v){
+        leftCommunity = false;
     }
 
     public void docked(View v){
@@ -69,6 +79,7 @@ public class AutoActivity extends AppCompatActivity {
     public void resetChargeStation(View v){
         chargeStation = "None";
     }
+
     public void coneTop(View v){
         coneTop++;
         //((TextView)findViewById(R.id.coneTopAutoText)).setText("hi");

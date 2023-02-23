@@ -18,11 +18,25 @@
     >
 
     <Button
+        android:id="@+id/teleNoneButton"
+        android:layout_width="152dp"
+        android:layout_height="77dp"
+        android:backgroundTint="@color/melloyellow"
+        android:onClick="resetChargeStation"
+        android:text="None"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/leftCommunityButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <Button
         android:id="@+id/endGameButton"
         android:layout_width="152dp"
         android:layout_height="77dp"
         android:backgroundTint="@color/purple_500"
-        android:onClick="startTele"
+        android:onClick="startEndGame"
         android:text="end game"
         android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -152,10 +166,11 @@
         app:layout_constraintVertical_bias="0.694" />
 
     <Button
-        android:id="@+id/parkButton"
+        android:id="@+id/leftCommunityButton"
         android:layout_width="152dp"
         android:layout_height="77dp"
         android:backgroundTint="@color/melloyellow"
+        android:onClick="parked"
         android:text="Parked"
         android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -169,6 +184,7 @@
         android:layout_width="152dp"
         android:layout_height="77dp"
         android:backgroundTint="@color/melloyellow"
+        android:onClick="docked"
         android:text="Docked"
         android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -181,6 +197,7 @@
         android:layout_width="152dp"
         android:layout_height="77dp"
         android:backgroundTint="@color/melloyellow"
+        android:onClick="dockedAndEngaged"
         android:text="Docked + Engaged"
         android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"

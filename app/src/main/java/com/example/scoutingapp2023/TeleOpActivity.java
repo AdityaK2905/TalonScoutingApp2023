@@ -1,5 +1,6 @@
 package com.example.scoutingapp2023;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ public class TeleOpActivity extends AppCompatActivity {
 
     String scouter;
     String teamNum;
+    String matchNum;
 
     String teleChargeStation = "none";
     //Cubes
@@ -30,6 +32,7 @@ public class TeleOpActivity extends AppCompatActivity {
     int autoLowCubes = 0;
 
     String autoChargeStation;
+    Boolean leftCommunity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +49,63 @@ public class TeleOpActivity extends AppCompatActivity {
         autoLowCubes = bundleAuto.getInt("autoCubeBot");
 
         autoChargeStation = bundleAuto.getString("chargeStation");
+        matchNum = bundleAuto.getString("matchNum");
+        teamNum = bundleAuto.getString("teamNum");
+        leftCommunity = bundleAuto.getBoolean("leftCommunity");
+    }
+
+    public void startEndGame(View v){
+        Bundle bundleTele = new Bundle();
+        bundleTele.putString("matchNum", matchNum);
+        bundleTele.putString("teamNum", teamNum);
+
+        bundleTele.putBoolean("leftCommunity", leftCommunity);
+
+        bundleTele.putInt("autoTopCones", autoTopCones);
+        bundleTele.putInt("autoMidCones", autoMidCones);
+        bundleTele.putInt("autoLowCones", autoLowCones);
+
+        bundleTele.putInt("autoTopCubes", autoTopCubes);
+        bundleTele.putInt("autoMidCubes", autoMidCubes);
+        bundleTele.putInt("autoLowCubes", autoLowCubes);
+
+        bundleTele.putString("autoChargeStation", autoChargeStation);
+
+        //TELEOP STUFF
+        bundleTele.putString("teleChargeStation", teleChargeStation);
+
+        bundleTele.putInt("topCones", topCones);
+        bundleTele.putInt("midCones", midCones);
+        bundleTele.putInt("lowCones", lowCones);
+
+        bundleTele.putInt("topCubes", topCubes);
+        bundleTele.putInt("midCubes", midCubes);
+        bundleTele.putInt("lowCubes", lowCubes);
+
+        Intent EndIntent = new Intent(this, EndGameActivity.class);
+        EndIntent.putExtras(bundleTele);
+        startActivity(EndIntent);
     }
 
 
 
+    //charge station
 
+    public void parked(View v){
+        teleChargeStation = "Parked";
+    }
 
+    public void docked(View v){
+        teleChargeStation = "Docked";
+    }
 
+    public void dockedAndEngaged(View v){
+        teleChargeStation = "Engaged";
+    }
 
+    public void resetChargeStation(View v){
+        teleChargeStation = "None";
+    }
 
 
 
