@@ -1,6 +1,7 @@
 package com.example.scoutingapp2023;
 
 import android.content.Intent;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.scoutingapp2023.filemanagement.ApplicationInstance;
 import com.example.scoutingapp2023.filemanagement.Constants;
 
 import java.io.File;
@@ -59,7 +61,7 @@ public class EndGameActivity extends AppCompatActivity {
         autoMidCubes = bundleTele.getInt("autoCubeMid");
         autoLowCubes = bundleTele.getInt("autoCubeBot");
 
-        autoChargeStation = bundleTele.getString("chargeStation");
+        autoChargeStation = bundleTele.getString("autoChargeStation");
         matchNum = bundleTele.getString("matchNum");
         teamNum = bundleTele.getString("teamNum");
         leftCommunity = bundleTele.getBoolean("leftCommunity");
@@ -83,6 +85,7 @@ public class EndGameActivity extends AppCompatActivity {
         EditText drivingEditable =(EditText) findViewById(R.id.driverEditText);
         EditText generalEditable =(EditText) findViewById(R.id.generalEditText);
 
+        MediaScannerConnection mMs;
         drivingSkills =drivingEditable.getText().toString();
         generalComments = generalEditable.getText().toString();
 
@@ -92,25 +95,25 @@ public class EndGameActivity extends AppCompatActivity {
         generalComments = removeCommas(generalComments);
 
         int totalpoints = 0;
+
         if (leftCommunity){
             totalpoints += 3;
         }
         totalpoints += 3*(autoLowCones+autoLowCubes)+4*(autoMidCones+autoMidCubes)+6*(autoTopCones+autoTopCubes);
         totalpoints += 2*(lowCones+lowCubes)+3*(midCones+midCubes)+5*(topCones+topCubes);
 
+
         if (autoChargeStation.equals("Docked")){
             totalpoints += 8;
-        }
-        if (autoChargeStation.equals("Engaged")){
+        } else if (autoChargeStation.equals("Engaged")){
             totalpoints += 12;
         }
+
         if (teleChargeStation.equals("Docked")){
             totalpoints += 6;
-        }
-        if (teleChargeStation.equals("Engaged")){
+        } else if (teleChargeStation.equals("Engaged")){
             totalpoints += 10;
-        }
-        if (teleChargeStation.equals("Parked")){
+        } else if (teleChargeStation.equals("Parked")){
             totalpoints += 2;
         }
 
@@ -118,7 +121,7 @@ public class EndGameActivity extends AppCompatActivity {
 
 
         String entry = ""+teamNum+","+matchNum+","+leftCommunity+","+autoTopCones+","+autoMidCones+","+autoLowCones+","+autoTopCubes+","+autoMidCubes+","+autoLowCubes+","+autoChargeStation+","+
-                topCones+","+midCones+","+lowCones+","+topCubes+","+midCubes+","+lowCubes+","+teleChargeStation+","+drivingSkills+","+generalComments;
+                topCones+","+midCones+","+lowCones+","+topCubes+","+midCubes+","+lowCubes+","+teleChargeStation+","+drivingSkills+","+generalComments+"\n";
 
         // Create directory if it does not exist
         File directory = new File(Constants.SCOUTING_DIR);
@@ -136,8 +139,10 @@ public class EndGameActivity extends AppCompatActivity {
 
         }
         catch (Exception e) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Something went wrong.", Toast.LENGTH_LONG);
+            /*Toast toast = Toast.makeText(getApplicationContext(), "Something went wrong.", Toast.LENGTH_LONG);
             toast.show();
+            */
+
         }
         Toast toast = Toast.makeText(getApplicationContext(), "File Downloaded! Check Directory.", Toast.LENGTH_LONG);
         toast.show();
