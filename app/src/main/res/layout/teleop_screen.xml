@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintVertical_bias="0.913" />
 
     <Button
         android:id="@+id/endGameButton"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.948" />
 
     <TextView
         android:id="@+id/cubeText2"
@@ -173,11 +173,11 @@
         android:onClick="parked"
         android:text="Parked"
         android:textSize="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dockedButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintVertical_bias="0.945" />
 
     <Button
         android:id="@+id/dockedButton"
@@ -187,10 +187,11 @@
         android:onClick="docked"
         android:text="Docked"
         android:textSize="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dockedandEbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
 
     <Button
         android:id="@+id/dockedandEbutton"
@@ -200,11 +201,11 @@
         android:onClick="dockedAndEngaged"
         android:text="Docked + Engaged"
         android:textSize="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/endGameButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.709" />
+        app:layout_constraintVertical_bias="0.96" />
 
     <TextView
         android:id="@+id/coneTopText"
@@ -367,4 +368,17 @@
         app:layout_constraintStart_toStartOf="@+id/cubeTopButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.267" />
+
+    <TextView
+        android:id="@+id/teleChargeStationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Charge Station: None"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/teleNoneButton"
+        app:layout_constraintEnd_toStartOf="@+id/cubeTopButton"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toEndOf="@+id/ConeTopButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
 </androidx.constraintlayout.widget.ConstraintLayout>

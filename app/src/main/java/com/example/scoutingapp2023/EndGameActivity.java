@@ -53,13 +53,13 @@ public class EndGameActivity extends AppCompatActivity {
         setContentView(R.layout.end_game);
         Bundle bundleTele = getIntent().getExtras();
 
-        autoTopCones = bundleTele.getInt("autoConeTop");
-        autoMidCones = bundleTele.getInt("autoConeMid");
-        autoLowCones = bundleTele.getInt("autoConeBot");
+        autoTopCones = bundleTele.getInt("autoTopCones");
+        autoMidCones = bundleTele.getInt("autoMidCones");
+        autoLowCones = bundleTele.getInt("autoLowCones");
 
-        autoTopCubes = bundleTele.getInt("autoCubeTop");
-        autoMidCubes = bundleTele.getInt("autoCubeMid");
-        autoLowCubes = bundleTele.getInt("autoCubeBot");
+        autoTopCubes = bundleTele.getInt("autoTopCubes");
+        autoMidCubes = bundleTele.getInt("autoMidCubes");
+        autoLowCubes = bundleTele.getInt("autoLowCubes");
 
         autoChargeStation = bundleTele.getString("autoChargeStation");
         matchNum = bundleTele.getString("matchNum");
@@ -121,7 +121,7 @@ public class EndGameActivity extends AppCompatActivity {
 
 
         String entry = ""+teamNum+","+matchNum+","+leftCommunity+","+autoTopCones+","+autoMidCones+","+autoLowCones+","+autoTopCubes+","+autoMidCubes+","+autoLowCubes+","+autoChargeStation+","+
-                topCones+","+midCones+","+lowCones+","+topCubes+","+midCubes+","+lowCubes+","+teleChargeStation+","+drivingSkills+","+generalComments+"\n";
+                topCones+","+midCones+","+lowCones+","+topCubes+","+midCubes+","+lowCubes+","+teleChargeStation+","+totalpoints+","+drivingSkills+","+generalComments+"\n";
 
         // Create directory if it does not exist
         File directory = new File(Constants.SCOUTING_DIR);

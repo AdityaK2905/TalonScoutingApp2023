@@ -93,18 +93,22 @@ public class TeleOpActivity extends AppCompatActivity {
 
     public void parked(View v){
         teleChargeStation = "Parked";
+        updateText();
     }
 
     public void docked(View v){
         teleChargeStation = "Docked";
+        updateText();
     }
 
     public void dockedAndEngaged(View v){
         teleChargeStation = "Engaged";
+        updateText();
     }
 
     public void resetChargeStation(View v){
         teleChargeStation = "None";
+        updateText();
     }
 
 
@@ -180,6 +184,7 @@ public class TeleOpActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.cubeTopText)).setText(Integer.toString(topCubes));
         ((TextView)findViewById(R.id.cubeMidText)).setText(Integer.toString(midCubes));
         ((TextView)findViewById(R.id.cubeBotText)).setText(Integer.toString(lowCubes));
+        ((TextView)findViewById(R.id.teleChargeStationText)).setText("Charge Station: " + teleChargeStation);
     }
 
 }

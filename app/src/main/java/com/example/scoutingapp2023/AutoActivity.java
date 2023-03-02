@@ -62,6 +62,7 @@ public class AutoActivity extends AppCompatActivity {
 
     public void leftCommunity(View v){
         leftCommunity = true;
+        ((TextView)findViewById(R.id.autoChargeStationText)).setText("Charge Station: Left Community");
     }
 
     public void undoLeftCommunity(View v){
@@ -70,14 +71,17 @@ public class AutoActivity extends AppCompatActivity {
 
     public void docked(View v){
         chargeStation = "Docked";
+        updateText();
     }
 
     public void dockedAndEngaged(View v){
         chargeStation = "Engaged";
+        updateText();
     }
 
     public void resetChargeStation(View v){
         chargeStation = "None";
+        updateText();
     }
 
     public void coneTop(View v){
@@ -146,6 +150,8 @@ public class AutoActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.cubeTopText)).setText(Integer.toString(cubeTop));
         ((TextView)findViewById(R.id.cubeMidText)).setText(Integer.toString(cubeMid));
         ((TextView)findViewById(R.id.cubeBotText)).setText(Integer.toString(cubeBot));
+
+        ((TextView)findViewById(R.id.autoChargeStationText)).setText("Charge Station: " + chargeStation);
     }
 
 
