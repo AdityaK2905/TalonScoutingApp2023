@@ -85,18 +85,23 @@ public class AutoActivity extends AppCompatActivity {
     }
 
     public void coneTop(View v){
+
         coneTop++;
         //((TextView)findViewById(R.id.coneTopAutoText)).setText("hi");
         updateText();
     }
     public void coneTopUndo(View v){
-        coneTop--;
+        if (coneTop>0) {
+            coneTop--;
+        }
         //((TextView)findViewById(R.id.coneTopAutoText)).setText("hi");
         updateText();
     }
 
     public void coneMidUndo(View v){
-        coneMid--;
+        if (coneMid > 0) {
+            coneMid--;
+        }
         updateText();
     }
     public void coneMid(View v){
@@ -109,7 +114,9 @@ public class AutoActivity extends AppCompatActivity {
         updateText();
     }
     public void coneBotUndo(View v){
-        coneBot--;
+        if (coneBot > 0) {
+            coneBot--;
+        }
         updateText();
     }
 
@@ -118,7 +125,9 @@ public class AutoActivity extends AppCompatActivity {
         updateText();
     }
     public void cubeTopUndo(View v){
-        cubeTop--;
+        if (cubeTop > 0) {
+            cubeTop--;
+        }
         updateText();
     }
 
@@ -127,7 +136,9 @@ public class AutoActivity extends AppCompatActivity {
         updateText();
     }
     public void cubeMidUndo(View v){
-        cubeMid--;
+        if (cubeMid > 0) {
+            cubeMid--;
+        }
         updateText();
     }
 
@@ -136,7 +147,9 @@ public class AutoActivity extends AppCompatActivity {
         updateText();
     }
     public void cubeBotUndo(View v){
-        cubeBot--;
+        if (cubeBot > 0) {
+            cubeBot--;
+        }
         updateText();
     }
 

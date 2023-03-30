@@ -146,32 +146,44 @@ public class TeleOpActivity extends AppCompatActivity {
 
     //Undo Methods
     public void coneTopUndo(View v){
-        topCones--;
+        if (topCones > 0) {
+            topCones--;
+        }
         updateText();
     }
 
     public void coneMidUndo(View v){
-        midCones--;
+        if (midCones > 0) {
+            midCones--;
+        }
         updateText();
     }
 
     public void coneLowUndo(View v){
-        lowCones--;
+        if (lowCones > 0) {
+            lowCones--;
+        }
         updateText();
     }
 
     public void cubeTopUndo(View v){
-        topCubes--;
+        if (topCubes > 0) {
+            topCubes--;
+        }
         updateText();
     }
 
     public void cubeMidUndo(View v){
-        midCubes--;
+        if (midCubes > 0) {
+            midCubes--;
+        }
         updateText();
     }
 
     public void cubeLowUndo(View v){
-        lowCubes--;
+        if (lowCubes > 0) {
+            lowCubes--;
+        }
         updateText();
     }
 
